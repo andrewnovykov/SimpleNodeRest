@@ -5,9 +5,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+require("./app/controllers/index")(app);
 
-require('./controllers/authController')(app);
-require("./controllers/projectController")(app);
+
+
 
 app.listen(3000, ()=>{
     console.log('Server was started ....');
